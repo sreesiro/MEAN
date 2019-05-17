@@ -5,6 +5,9 @@ import { HttpClientModule} from '@angular/common/http';
 // Router Module, We have to inherit..
 import {RouterModule, Routes} from '@angular/router';
 
+// Import form module
+import { FormsModule} from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -36,6 +39,7 @@ import { BloghttpService } from './bloghttp.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot([
       {path: 'home', component: HomeComponent},
       {path: '', redirectTo: 'home', pathMatch: 'full'},
