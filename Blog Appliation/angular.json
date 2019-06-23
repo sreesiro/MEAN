@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Blog": {
+    "blog-FrontEnd": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Blog",
+            "outputPath": "dist/blog-FrontEnd",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,9 +23,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -57,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Blog:build"
+            "browserTarget": "blog-FrontEnd:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Blog:build:production"
+              "browserTarget": "blog-FrontEnd:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Blog:build"
+            "browserTarget": "blog-FrontEnd:build"
           }
         },
         "test": {
@@ -102,7 +106,7 @@
         }
       }
     },
-    "Blog-e2e": {
+    "blog-FrontEnd-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -111,11 +115,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Blog:serve"
+            "devServerTarget": "blog-FrontEnd:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Blog:serve:production"
+              "devServerTarget": "blog-FrontEnd:serve:production"
             }
           }
         },
@@ -131,5 +135,5 @@
       }
     }
   },
-  "defaultProject": "Blog"
+  "defaultProject": "blog-FrontEnd"
 }
